@@ -1,0 +1,56 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Scraper</title>
+  <!-- CSS  -->
+  <link href="assets/css/home.css" type="text/css" rel="stylesheet" media="screen,projection">
+</head>
+<div class="ui three item menu topnav" id="myTopnav">
+  <a class="item active" id="logo" href="#medium"> 主页</a>
+  <a class="item" id="saved" href="#saved-articles">保存</a>
+  <a class="item" id="scrape" href="#scrape">搜索 </a>
+</div>
+
+<input id="url" type="text" class="form-control" placeholder="url" style="width:750px;height:40px;">
+
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="article-info">Added <span id="article-length"></span> new articles!</p>
+  </div>
+</div>
+<div id="wrapper">
+  <div id="headline" class="ui centered">
+    <h1> Article Scraper</h1>
+    <h2></h2>
+  </div>
+  <div class="ui column stackable grid" id="articles">
+    {{#each articles}}
+    {{!-- Each article will fit into a card--}}
+    <div class="ui card">
+      <a href={{url}} target="_blank">
+        <div class="image">
+          <img class="ui centered medium image" src={{imgURL}} alt={{headline}} id="img-{{_id}}" />
+        </div>
+        <div class="content">
+          <p class="header">{{headline}}</p>
+      </a>
+      <div class="description">
+        {{summary}}
+      </div>
+      </div>
+      <div class="extra content">
+        <div data-id={{_id}} class="ui animated button saveArticle" tabindex="0">
+          <div class="visible content">Save Article</div>
+          <div class="hidden content">
+            <i class="right arrow icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <script src="/assets/js/home.js"></script>

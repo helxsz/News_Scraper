@@ -1,0 +1,62 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Medium Scraper</title>
+    <!-- CSS  -->
+    <link href="assets/css/saved.css" type="text/css" rel="stylesheet" media="screen,projection">
+</head>
+<div class="ui two item menu topnav" id="myTopnav">
+    <a class="item active" id="logo" href="#medium">Medium Scraper</a>
+    <a class="item" href="/">Home</a>
+</div>
+<div class="ui column stackable grid" id="articles">
+    {{#each articles}}
+    <!-- Modal -->
+    <div class="modal" id="modal-{{_id}}">
+        <div class="modal-sandbox"></div>
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="close-modal">&#10006;</div>
+                <h3>Notes for : {{headline}}</h3>
+            </div>
+            <div class="modal-body" data-id="{{_id}}">
+                <textarea class='bodyinput' name='body'></textarea>
+                <div class="ui right segment one column" id="notes"></div>
+                <div class="ui buttons">
+                    <button data-id="{{_id}}" class="ui button positive save-note">Save Note</button>
+                    <div class="or"></div>
+                    <button class="ui button close-modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- Each article will fit into a card--}}
+    <div class="ui card">
+        <a href={{url}} target="_blank">
+            <div class="image">
+                <img class="ui centered medium image" src={{imgURL}} alt={{headline}} id="img-{{_id}}" />
+            </div>
+            <div class="content">
+                <p class="header">{{headline}}</p>
+        </a>
+        {{!-- Ribbon used to access the notes--}}
+        <div class="ui raised ">
+            <a data-id={{_id}} data-modal="modal-{{_id}}" class="ui green right ribbon label modal-trigger addNote">Add notes!</a>
+        </div>
+        <div class="description">
+            {{summary}}
+        </div>
+        </div>
+        <div class="extra content">
+            <div data-id={{_id}} class="ui animated inverted violet button removeSaved" tabindex="0">
+                <div class="visible content">Remove From Saved</div>
+                <div class="hidden content">
+                    <i class="left arrow icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<script src="/assets/js/saved.js"></script>

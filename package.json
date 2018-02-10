@@ -1,0 +1,30 @@
+{
+  "name": "medium_tech_news_scraper",
+  "version": "1.0.0",
+  "description": "An app that scrapes Medium.com for the latest tech news",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dquez/Medium_Tech_News_Scraper.git"
+  },
+  "author": "Dariell Vasquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dquez/Medium_Tech_News_Scraper/issues"
+  },
+  "homepage": "https://github.com/Dquez/Medium_Tech_News_Scraper#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "google-translate-api": "^2.3.0",
+    "mongoose": "^5.0.0-rc2",
+    "morgan": "^1.9.0",
+    "request": "^2.83.0",
+    "translate": "^1.0.2"
+  }
+}

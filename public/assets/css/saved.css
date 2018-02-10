@@ -1,0 +1,131 @@
+* {
+    font-family: "Arial", sans-serif;
+    font-weight: normal;
+}
+.modal,
+.modal-box {
+    z-index: 900;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, .8);
+    overflow: auto;
+}
+
+.modal-box {
+    position: relative;
+    width: 80%;
+    max-width: 920px;
+    margin: 100px auto;
+    animation-name: modalbox;
+    animation-duration: .3s;
+    animation-timing-function: ease-out;
+}
+
+.modal-header {
+    padding: 20px 40px;
+    background: #504caf;
+    color: #ffffff;
+}
+
+.modal-body {
+    background: #ECEFF1;
+    padding: 60px 40px;
+}
+
+
+/* Close Button */
+
+.close-modal {
+    text-align: right;
+    cursor: pointer;
+}
+
+
+/* Animation */
+
+@-webkit-keyframes modalbox {
+    0% {
+        top: -250px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes modalbox {
+    0% {
+        top: -250px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+p {
+    line-height: 1.4em;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.ui.menu .item {
+    background-color: #504caf;
+    color: white;
+}
+
+.ui.menu .item:hover {
+    color:black;
+}
+/* Add a color to the active/current link */
+#logo {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* The Semantic built in styles set these two cards to have 0 margin so their styles need to be specifically targeted in this css file */
+.ui.card:last-child {
+    margin: 10px;
+}
+.ui.animated.button {
+    background-color: #504caf;
+    color:white;
+}
+
+.ui.card>.content p:last-child, .ui.cards>.card>.content p:last-child {
+    color: green;
+}
+
+.ui.medium.image, .ui.medium.images .image, .ui.medium.images img, .ui.medium.images svg {
+    max-height:300px;
+}
+
+.ui.card {
+    position:relative;
+    left: 2em;
+    margin: 10px;
+}
